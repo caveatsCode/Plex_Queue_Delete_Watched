@@ -15,7 +15,6 @@ s = requests.session()
 #open the login page and get the unique authenticity token
 page = s.get("https://my.plexapp.com/users/sign_in")
 auth_token = get_auth_token(page)
-escaped_auth_token = cgi.escape(auth_token)
 #login
 login_details = "utf8=%E2%9C%93&authenticity_token=" + cgi.escape(auth_token) \
                 + "&user%5Blogin%5D=" + cgi.escape(username) \
